@@ -170,7 +170,7 @@ $ cat slipdays.txt
 
 
 ## Notes and Hints
-- Take a look at "sysfile.c" and "sysproc.c" to find tips on how to implement syscall logic. 
+- Take a look at `sysfile.c` and `sysproc.c` to find tips on how to implement syscall logic. 
 - `proc.c` and `proc.h` are files you can look into to get an understanding of how process related structs look like. You can use the proc struct to store information.
 - It is important to remember that the flavour of C used in xv6 differs from the standard C library (stdlib.c) that you might be used to. For example, in the small userspace example shown above, notice that printf takes in an extra first argument(the file descriptor), which differs from the standard printf you might be used to. It is best to use `grep` to search around in xv6 source code files to familiarize yourself with how such functions work.
 - `user.h` contains a list of system calls and userspace functions (defined in `ulib.c`) available to you, while in userspace. It is important to remember that these functions can't be used in kernelspace and it is left as an exercise for you to figure out what helper functions are necessary(if any) in the kernel for successful completion of this project.

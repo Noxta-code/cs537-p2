@@ -176,5 +176,5 @@ $ cat slipdays.txt
 - `user.h` contains a list of system calls and userspace functions (defined in `ulib.c`) available to you, while in userspace. It is important to remember that these functions can't be used in kernelspace and it is left as an exercise for you to figure out what helper functions are necessary(if any) in the kernel for successful completion of this project.
 - You will need to add a new system call, but also modify the write() system call so it can scan incoming buffers to check if the crash string is found in the buffer or not.
 - You will need to find a way to keep track of whether the process has written the crash string or not. 
-- You will have to make use of the "panic()" function to crash the system.
+- You will have to make use of the `panic()` function to crash the system.
 

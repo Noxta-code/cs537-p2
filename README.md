@@ -174,7 +174,7 @@ $ cat slipdays.txt
 - `proc.c` and `proc.h` are files you can look into to get an understanding of how process related structs look like. You can use the proc struct to store information.
 - It is important to remember that the flavour of C used in xv6 differs from the standard C library (stdlib.c) that you might be used to. For example, in the small userspace example shown above, notice that printf takes in an extra first argument(the file descriptor), which differs from the standard printf you might be used to. It is best to use `grep` to search around in xv6 source code files to familiarize yourself with how such functions work.
 - `user.h` contains a list of system calls and userspace functions (defined in `ulib.c`) available to you, while in userspace. It is important to remember that these functions can't be used in kernelspace and it is left as an exercise for you to figure out what helper functions are necessary(if any) in the kernel for successful completion of this project.
-- You will need to add a new system call, but also modify the write() system call so it can scan incoming buffers to check if the crash string is found in the buffer or not.
+- You will need to add a new system call, but also modify the `write()` system call so it can scan incoming buffers to check if the crash string is found in the buffer or not.
 - You will need to find a way to keep track of whether the process has written the crash string or not. 
 - You will have to make use of the `panic()` function to crash the system.
 

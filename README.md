@@ -6,7 +6,7 @@ layout: default
 # CS537 Spring 2025, Project 2
 
 ## Updates
-* TBD
+* Updated README to specify crash string: `it's a feature, not a bug!`
 
 
 
@@ -26,10 +26,10 @@ In this assignment, you will create a system call in xv6 which crashes the syste
 
 In this project you will add a new system call to the xv6 operating system. More specifically, you will have to implement a system call named sys_crash with the following signature:
 int crash(void)
-In this project you will implement a system call `crash()` that when called will the ability to crash the system. Whether `crash()` crashes the system depends on whether the process uses the `write()` call to write the crash string it's not a bug, it's a feature!.
+In this project you will implement a system call `crash()` that when called will the ability to crash the system. Whether `crash()` crashes the system depends on whether the process uses the `write()` call to write the crash string `"it's a feature, not a bug!"`.
 ```
 int fd_stdout = 1; //file descriptor for stdout stream
-char *crash_string = "it's not a bug, it's a feature!";
+char *crash_string = "it's a feature, not a bug!";
 write(fd_stdout, crash_string, strlen(crash_string));
 ```
 
@@ -60,7 +60,7 @@ You may find it helpful to go through some of these videos from earlier semester
 ### Task 2: Modify the `write()` system call
 You will need to modify the `write()` system call to detect the crash string and remember if it was ever passed.
 
-The crash string is valid if it the string starts and contains `"it's not a bug, it's a feature!"`.
+The crash string is valid if it the string starts and contains `"it's a feature, not a bug!"`.
 
 You will have to find the code for the `write()` system call and add code to see if the proved buffer contains the crash string. If it does, you should set a flag in the process structure remembering that the process can now be crashed (and make sure to initialize it to zero for a new process)
 

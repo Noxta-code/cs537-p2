@@ -26,14 +26,14 @@ In this assignment, you will create a system call in xv6 which returns the name 
 
 In this project you will add a new system call to the xv6 operating system. More specifically, you will have to implement a system call named sys_crash with the following signature:
 int crash(void)
-In this project you will implement a system call (crash()) that when called will the ability to crash the system. Whether crash() crashes the system depends on whether the process uses the write() call to write the crash string it's not a bug, it's a feature!.
+In this project you will implement a system call `crash()` that when called will the ability to crash the system. Whether `crash()` crashes the system depends on whether the process uses the `write()` call to write the crash string it's not a bug, it's a feature!.
 ```
 int fd_stdout = 1; //file descriptor for stdout stream
 char *crash_string = "it's not a bug, it's a feature!";
 write(fd_stdout, crash_string, strlen(crash_string));
 ```
 
-If the process has used write() to crash string, then using crash() should result in an output:
+If the process has used `write()` to crash string, then using `crash()` should result in an output:
 
 ```
 $ ./crashtest_prototype
@@ -55,26 +55,26 @@ You may find it helpful to go through some of these videos from earlier semester
 2. [Discussion video](https://mediaspace.wisc.edu/media/Shivaram+Venkataraman-+Psychology105+1.30.2020+5.31.23PM/0_2ddzbo6a/150745971) - Shivaram Venkataraman.
 3. [Some background on xv6 syscalls](https://github.com/remzi-arpacidusseau/ostep-projects/blob/master/initial-xv6/background.md) - Remzi Arpaci-Dusseau.
 
-### Task 2: Modify the write() system call
-You will need to modify the write() system call to detect the crash string and remember if it was ever passed.
+### Task 2: Modify the `write()` system call
+You will need to modify the `write()` system call to detect the crash string and remember if it was ever passed.
 
-The crash string is valid if it the string starts and contains **"it's not a bug, it's a feature!"**.
+The crash string is valid if it the string starts and contains `"it's not a bug, it's a feature!"`.
 
-You will have to find the code for the write() system call and add code to see if the proved buffer contains the crash string. If it does, you should set a flag in the process structure remembering that the process can now be crashed (and make sure to initialize it to zero for a new process)
+You will have to find the code for the `write()` system call and add code to see if the proved buffer contains the crash string. If it does, you should set a flag in the process structure remembering that the process can now be crashed (and make sure to initialize it to zero for a new process)
 
-You should also make sure the changes made to proc struct are reflected in the init, fork and exec implementations as they deal with starting/modifying processes as well. A process inherits it's crash behavior from it's parent, unless a new executable is run within the process, in which case, the crash behavior resets.
+You should also make sure the changes made to proc struct are reflected in the `userinit()`, `fork()` and `exec()` implementations as they deal with starting/modifying processes as well. A process inherits it's crash behavior from it's parent, unless a new executable is run within the process, in which case, the crash behavior resets.
 
 ### Task 3: Create the crash system call
 You will have to add a new system call and modify the system call table and handler to contain the new call.
 
-When crash() is called, it should check if the process previously passed the crash string to write(); if so it should crash the system. If not, it should return an error.
+When `crash()` is called, it should check if the process previously passed the crash string to `write()`; if so, it should crash the system. If not, it should return an error.
 
 When crashing, xv6 must print **XV6_TEST_ERROR CRASH SYSTEM CALL INITIATED. CRASHING SYSTEM.**
 
 You will need to add a userprogram called crashtest that effectively demonstrates the functionality of the crash system call. You will need to show:
-- crash() returns -1 when no write() system call has been made
-- crash() returns -1 when write() system call is made with something other than crash string
-- crash() crashes the system after write() system call is made with crash string
+- `crash()` returns -1 when no `write()` system call has been made
+- `crash()` returns -1 when `write()` system call is made with something other than crash string
+- `crash()` crashes the system after `write()` system call is made with crash string
 
 
 ### Task 4: Add crashtest user level program
@@ -101,9 +101,9 @@ You may want to write some new user-level programs to help test your implementat
 
 You will need to add a userprogram called crashtest that effectively demonstrates the functionality of the crash system call. You will need to show:
 
-* crash() returns -1 when no write() system call has been made
-* crash() returns -1 when write() system call is made with something other than crash string
-* crash() crashes the system after write() system call is made with crash string
+* `crash()` returns -1 when no `write()` system call has been made
+* `crash()` returns -1 when `write()` system call is made with something other than crash string
+* `crash()` crashes the system after `write()` system call is made with crash string
 
 ## Project Details
 
@@ -121,7 +121,7 @@ You will need to add a userprogram called crashtest that effectively demonstrate
 
 ## Suggested Workflow
 - Add a system call to crash the system
-- Create a user program (crashtest.c) to test whether crash functionality works.
+- Create a user program (`crashtest.c`) to test whether crash functionality works.
 - Modify the OS to keep track of whether a process has written the crash string or not.
 - Make changes to the write call such that it can inform the OS that a process has written the crash string
 - Modify the crash system to call to check whether the process has written the crash string
@@ -162,7 +162,7 @@ $ cat slipdays.txt
 
 ## Submitting your work
 - Run `submission.sh` 
-- Download generated p1.tar file
+- Download generated p2.tar file
 - Upload it to Canvas
   * Links to Canvas assignment: 
   * [Prof. Mike Swift's class](https://canvas.wisc.edu/courses/434150/assignments/2627847) 

@@ -12,7 +12,7 @@ layout: default
 
 ## Learning Objectives
 
-In this assignment, you will create a system call in xv6 which returns the name of the parent process of the current process.
+In this assignment, you will create a system call in xv6 which crashes the system if a special phrase has been written previously by a process using the  `write()` system call.
 
 * Understand the xv6 OS, a simple UNIX operating system.
 * Learn to build and customize the xv6 OS

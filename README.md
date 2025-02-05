@@ -55,7 +55,7 @@ You may find it helpful to go through some of these videos from earlier semester
 2. [Discussion video](https://mediaspace.wisc.edu/media/Shivaram+Venkataraman-+Psychology105+1.30.2020+5.31.23PM/0_2ddzbo6a/150745971) - Shivaram Venkataraman.
 3. [Some background on xv6 syscalls](https://github.com/remzi-arpacidusseau/ostep-projects/blob/master/initial-xv6/background.md) - Remzi Arpaci-Dusseau.
 
-* To Exit out of QEMU use Alt + x
+**To Exit out of QEMU use alt + x**
 
 ### Task 2: Modify the `write()` system call
 You will need to modify the `write()` system call to detect the crash string and remember if it was ever passed.

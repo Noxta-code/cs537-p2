@@ -62,7 +62,7 @@ The crash string is valid if it the string starts and contains `"it's not a bug,
 
 You will have to find the code for the `write()` system call and add code to see if the proved buffer contains the crash string. If it does, you should set a flag in the process structure remembering that the process can now be crashed (and make sure to initialize it to zero for a new process)
 
-You should also make sure the changes made to proc struct are reflected in the `userinit()`, `fork()` and `exec()` implementations as they deal with starting/modifying processes as well. A process inherits it's crash behavior from it's parent, unless a new executable is run within the process, in which case, the crash behavior resets.
+You should also make sure the changes made to process structure are reflected in the `userinit()`, `fork()` and `exec()` implementations as they deal with starting/modifying processes as well. A process inherits it's crash behavior from it's parent, unless a new executable is run within the process, in which case, the crash behavior resets.
 
 ### Task 3: Create the crash system call
 You will have to add a new system call and modify the system call table and handler to contain the new call.

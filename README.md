@@ -54,8 +54,9 @@ You may find it helpful to go through some of these videos from earlier semester
 1.  [Discussion video](https://www.youtube.com/watch?v=vR6z2QGcoo8&ab_channel=RemziArpaci-Dusseau) - Remzi Arpaci-Dusseau. 
 2. [Discussion video](https://mediaspace.wisc.edu/media/Shivaram+Venkataraman-+Psychology105+1.30.2020+5.31.23PM/0_2ddzbo6a/150745971) - Shivaram Venkataraman.
 3. [Some background on xv6 syscalls](https://github.com/remzi-arpacidusseau/ostep-projects/blob/master/initial-xv6/background.md) - Remzi Arpaci-Dusseau.
+4. [xv6 Debugging guide](https://git.doit.wisc.edu/cdis/cs/courses/cs537/spring25/public/discussion/-/blob/main/xv6-debugging.md?ref_type=heads)
 
-**To exit QEMU type alt + x**
+**To exit QEMU type ctrl+a, and press x**
 
 ### Task 2: Modify the `write()` system call
 You will need to modify the `write()` system call to detect the crash string and remember if it was ever passed.

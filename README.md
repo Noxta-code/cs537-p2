@@ -7,6 +7,7 @@ layout: default
 
 ## Updates
 * Updated README to specify crash string: `it's a feature, not a bug!`
+* While running the test script, make sure the only userprogram you have is crashtest. Too many userprograms can affect `run-tests.sh` 
 
 
 

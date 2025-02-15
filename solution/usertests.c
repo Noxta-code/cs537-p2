@@ -13,6 +13,23 @@ char name[3];
 char *echoargv[] = { "echo", "ALL", "TESTS", "PASSED", 0 };
 int stdout = 1;
 
+int crash(void); // Test if declaration of crash is needed
+
+// USER CRASH TEST
+int crashtest(void){
+    if(crash() == -1){
+        printf(1, "crash() (correctly) failed before write().\n");
+    }
+    write(1, "it's a feature, not a bug!\n", 26);
+    if(crash() == -1){
+        printf(1, "crash() (incorrectly) failed after write().\n");
+    }
+    write(1, "it's a feature, not a bug!\n", 26);
+    crash();
+    exit();
+}
+
+
 // does chdir() call iput(p->cwd) in a transaction?
 void
 iputtest(void)

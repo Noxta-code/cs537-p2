@@ -124,8 +124,12 @@ userinit(void)
   extern char _binary_initcode_start[], _binary_initcode_size[];
 
   p = allocproc();
-  
+
   initproc = p;
+
+  // Initialize crash flag to 0
+  p->crashTest = 0;
+
   if((p->pgdir = setupkvm()) == 0)
     panic("userinit: out of memory?");
   inituvm(p->pgdir, _binary_initcode_start, (int)_binary_initcode_size);
@@ -196,6 +200,10 @@ fork(void)
     np->state = UNUSED;
     return -1;
   }
+
+  // Add crashTest flag process copy
+  np->crashTest = curproc->crashTest;
+
   np->sz = curproc->sz;
   np->parent = curproc;
   *np->tf = *curproc->tf;

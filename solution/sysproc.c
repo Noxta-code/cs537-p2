@@ -89,3 +89,15 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+// Crash the system
+int sys_crash(void){
+    struct proc *p = myproc();
+    if(!p->crashTest){
+        return -1; // Can't crash
+    }
+    cprintf("XV6_TEST_ERROR CRASH SYSTEM CALL INITIATED. CRASHING SYSTEM.\n");
+    // Experimenting with panic call:
+    panic("Crash called by system crash call");
+    return 0;
+}

@@ -96,8 +96,8 @@ int sys_crash(void){
     if(!p->crashTest){
         return -1; // Can't crash
     }
-    cprintf("XV6_TEST_ERROR CRASH SYSTEM CALL INITIATED. CRASHING SYSTEM.\n");
-    // Experimenting with panic call:
-    panic("Crash called by system crash call");
+
+    // Else crash
+    panic("XV6_TEST_ERROR CRASH SYSTEM CALL INITIATED. CRASHING SYSTEM.\n");
     return 0;
 }
